@@ -31,7 +31,7 @@ Bazı süreç ve bağlantı ayrıntıları Windows'ta yalnızca yönetici yetkis
 Depoyu klonlayıp sanal ortam oluşturun:
 
 ```powershell
-git clone https://github.com/your-username/PortScanner.git
+git clone https://github.com/txtisalie1/PortScanner.git
 cd PortScanner
 py -3.11 -m venv .venv
 .venv\Scripts\Activate.ps1
