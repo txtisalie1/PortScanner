@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "PortScanner"
+version = "0.1.0"
+description = "Windows ağ bağlantılarını süreçlerle eşleştiren açıklanabilir güvenlik CLI aracı"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "PortScanner Contributors" }]
+keywords = ["network", "security", "windows", "connections", "monitoring"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: System :: Networking :: Monitoring",
+]
+dependencies = [
+  "psutil>=5.9.8",
+  "rich>=13.7.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+portscanner = "portscanner.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/txtisalie1/PortScannerPlus"
+Issues = "https://github.com/txtisalie1/PortScannerPlus/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["portscanner"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
